@@ -9,13 +9,13 @@ module.exports = {
 
   // dll的打包输出
   output: {
-    filename: "[name].js",
+    filename: "[name].dll.js",
     path: resolve(__dirname, "dll"),
     // 被放入的dll的库的名称
     library: "[name]_[hash]",
   },
 
-  // 生成 manifest.json，就是一个映射关系
+  // 生成.dll.js 和 manifest.json（映射关系）
   plugins: [
     new webpack.DllPlugin({
       // 和 output.library 保持一致
